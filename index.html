@@ -12,6 +12,13 @@ body{
     background:#0f0f0f;
     color:#f2f2f2;
     text-align:center;
+    animation:fadein 1s ease-in;
+}
+
+/* FADE IN */
+@keyframes fadein{
+    from{opacity:0;}
+    to{opacity:1;}
 }
 
 /* NAV */
@@ -39,14 +46,18 @@ nav a:hover{
 
 /* HEADER */
 header{
-    padding:140px 20px 60px;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     background:#000;
 }
 
 h1{
-    font-size:60px;
-    letter-spacing:2px;
-    color:#fff;
+    font-size:70px;
+    letter-spacing:3px;
+    margin:0;
 }
 
 p{
@@ -69,10 +80,10 @@ img{
 
 img:hover{
     filter:grayscale(0%);
-    transform:scale(1.05);
+    transform:scale(1.08);
 }
 
-/* BUTTON */
+/* BUTTONS */
 a{
     display:inline-block;
     margin-top:20px;
@@ -88,105 +99,82 @@ a{
 a:hover{
     background:#fff;
     color:#000;
-}
-    header{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-    body{
-    animation:fadein 1s ease-in;
+    transform:translateY(-3px);
 }
 
-@keyframes fadein{
-    from{opacity:0;}
-    to{opacity:1;}
+/* FOOTER */
+footer{
+    padding:40px 20px;
+    border-top:1px solid #222;
+    color:#aaa;
+    margin-top:40px;
+    font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<nav style="position:fixed;top:0;left:0;width:100%;background:#000;padding:15px;z-index:1000;text-align:center;">
-  <a href="#home" style="color:white;margin:10px;text-decoration:none;">Home</a>
-  <a href="#works" style="color:white;margin:10px;text-decoration:none;">Works</a>
-  <a href="#contact" style="color:white;margin:10px;text-decoration:none;">Contact</a>
+<!-- NAV -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#works">Works</a>
+  <a href="#contact">Contact</a>
 </nav>
 
+<!-- HOME -->
 <header id="home">
 
-  <div style="text-align:center; margin-top:80px;">
-    <h1 style="font-size:70px; letter-spacing:3px;">OULMI ART</h1>
-    <p>Graffiti & Mural Artist in UAE</p>
-  </div>
+  <h1>OULMI ART</h1>
+  <p>Graffiti & Wall Mural Artist • UAE</p>
 
   <a href="https://wa.me/971551846694">Contact on WhatsApp</a>
 
 </header>
 
-<section id="works" style="padding:60px 20px; text-align:center;">
+<!-- WORKS -->
+<section id="works">
 
   <h2>My Works</h2>
 
   <div style="display:flex;gap:15px;justify-content:center;flex-wrap:wrap;">
 
-    <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6" width="250" style="border-radius:10px;">
-    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5" width="250" style="border-radius:10px;">
-    <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7" width="250" style="border-radius:10px;">
+    <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6">
+    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5">
+    <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7">
 
   </div>
 
 </section>
 
-<section id="contact" style="padding:60px 20px; text-align:center;">
+<!-- CONTACT -->
+<section id="contact">
 
   <h2>Contact Me</h2>
 
   <p style="color:#aaa;">Let’s connect</p>
 
-  <div style="margin-top:20px;">
+  <div>
 
-    <!-- WhatsApp -->
-    <a href="https://wa.me/971551846694"
-       style="background:#111;color:#fff;padding:12px 25px;border-radius:30px;text-decoration:none;display:inline-block;margin:5px;">
-      WhatsApp
-    </a>
-
-    <!-- Email -->
-    <a href="mailto:hocineoulmi1618@gmail.com"
-       style="background:#111;color:#fff;padding:12px 25px;border-radius:30px;text-decoration:none;display:inline-block;margin:5px;">
-      Email
-    </a>
-
-    <!-- Instagram -->
-    <a href="https://instagram.com/oulmi_hocine"
-       style="background:#111;color:#fff;padding:12px 25px;border-radius:30px;text-decoration:none;display:inline-block;margin:5px;">
-      Instagram
-    </a>
-
-    <!-- TikTok -->
-    <a href="https://www.tiktok.com/@oulmi_hocine"
-       style="background:#111;color:#fff;padding:12px 25px;border-radius:30px;text-decoration:none;display:inline-block;margin:5px;">
-      TikTok
-    </a>
-
-    <!-- YouTube -->
-    <a href="https://youtube.com/@oulmi_hocine"
-       style="background:#111;color:#fff;padding:12px 25px;border-radius:30px;text-decoration:none;display:inline-block;margin:5px;">
-      YouTube
-    </a>
-
-    <!-- Facebook -->
-    <a href="https://www.facebook.com/share/1AWX5GRx6i/?mibextid=wwXIfr"
-       style="background:#111;color:#fff;padding:12px 25px;border-radius:30px;text-decoration:none;display:inline-block;margin:5px;">
-      Facebook
-    </a>
+    <a href="https://wa.me/971551846694">WhatsApp</a>
+    <a href="mailto:hocineoulmi1618@gmail.com">Email</a>
+    <a href="https://instagram.com/oulmi_hocine">Instagram</a>
+    <a href="https://www.tiktok.com/@oulmi_hocine">TikTok</a>
+    <a href="https://youtube.com/@oulmi_hocine">YouTube</a>
+    <a href="https://www.facebook.com/share/1AWX5GRx6i/?mibextid=wwXIfr">Facebook</a>
 
   </div>
 
 </section>
+
+<!-- FOOTER -->
+<footer>
+  ©️ 2025 Oulmi Hocine — Graffiti & Wall Mural Artist in UAE  
+  <br><br>
+  Based in Dubai | Number: +971551846694  
+  <br>
+  Email: hocineoulmi1618@gmail.com
+</footer>
 
 </body>
 </html>
