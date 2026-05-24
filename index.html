@@ -28,8 +28,31 @@ color:white;
 overflow-x:hidden;
 }
 
-/* HERO */
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:20px;
+padding:15px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
 
+nav a{
+color:#aaa;
+text-decoration:none;
+font-size:14px;
+}
+
+nav a:hover{
+color:white;
+}
+
+/* HERO */
 header{
 height:100vh;
 display:flex;
@@ -37,7 +60,6 @@ justify-content:center;
 align-items:center;
 text-align:center;
 position:relative;
-
 background-image:url("https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_4719.jpeg");
 background-size:cover;
 background-position:center;
@@ -54,13 +76,11 @@ background:rgba(0,0,0,0.70);
 .hero{
 position:relative;
 z-index:2;
-animation:fade 1.5s ease;
 }
 
 .hero h1{
 font-size:80px;
 font-weight:900;
-letter-spacing:3px;
 }
 
 .hero h2{
@@ -73,7 +93,6 @@ margin-top:10px;
 max-width:700px;
 margin:20px auto;
 color:#aaa;
-line-height:1.8;
 }
 
 .btn{
@@ -84,7 +103,6 @@ border:1px solid #444;
 border-radius:30px;
 color:white;
 text-decoration:none;
-transition:0.3s;
 }
 
 .btn:hover{
@@ -93,9 +111,8 @@ color:black;
 }
 
 /* SECTIONS */
-
 section{
-padding:100px 7%;
+padding:90px 7%;
 text-align:center;
 }
 
@@ -104,8 +121,32 @@ font-size:40px;
 margin-bottom:40px;
 }
 
-/* SOCIAL */
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
 
+.card{
+background:#111;
+border:1px solid #222;
+padding:25px;
+border-radius:15px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#444;
+}
+
+.card i{
+font-size:30px;
+margin-bottom:15px;
+}
+
+/* SOCIAL */
 .socials{
 display:flex;
 justify-content:center;
@@ -116,11 +157,6 @@ margin-top:20px;
 .socials a{
 font-size:26px;
 color:white;
-transition:0.3s;
-}
-
-.socials a:hover{
-transform:scale(1.2);
 }
 
 .fa-instagram{color:#E1306C;}
@@ -129,7 +165,6 @@ transform:scale(1.2);
 .fa-facebook{color:#1877F2;}
 
 /* GALLERY */
-
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -149,7 +184,6 @@ transform:scale(1.05);
 }
 
 /* BEFORE AFTER */
-
 .ba-slider{
 overflow-x:auto;
 display:flex;
@@ -163,19 +197,9 @@ height:380px;
 object-fit:cover;
 border-radius:15px;
 scroll-snap-align:center;
-transition:0.3s;
-}
-
-.ba-slider img:hover{
-transform:scale(1.05);
 }
 
 /* CONTACT */
-
-.contact{
-margin-top:30px;
-}
-
 .contact a{
 display:block;
 margin:10px;
@@ -183,17 +207,28 @@ color:#aaa;
 text-decoration:none;
 }
 
-/* FOOTER */
-
 footer{
 padding:50px;
 border-top:1px solid #222;
 color:#777;
 }
 
-@keyframes fade{
-from{opacity:0; transform:translateY(30px);}
-to{opacity:1; transform:translateY(0);}
+/* WHATSAPP */
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+font-size:30px;
+text-decoration:none;
+z-index:1000;
 }
 
 </style>
@@ -202,19 +237,24 @@ to{opacity:1; transform:translateY(0);}
 
 <body>
 
-<!-- HERO -->
+<!-- NAV -->
+<nav>
+<a href="#home">Home</a>
+<a href="#experience">Experience</a>
+<a href="#works">Works</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
 
-<header>
+<!-- HERO -->
+<header id="home">
 
 <div class="hero">
 
 <h1>Oulmi Hocine</h1>
-
 <h2>Graffiti Artist & Muralist</h2>
 
-<p>
-14 Years Experience • 1000+ Projects • 20+ Countries
-</p>
+<p>14 Years Experience • 1000+ Projects • 20+ Countries</p>
 
 <a class="btn" href="#works">View Works</a>
 
@@ -223,24 +263,48 @@ to{opacity:1; transform:translateY(0);}
 </header>
 
 <!-- SOCIAL -->
-
 <section>
 
 <div class="title">Social Media</div>
 
 <div class="socials">
 
-<a href="https://instagram.com/oulmi_hocine" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-<a href="https://www.tiktok.com/@oulmi_hocine" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-<a href="https://youtube.com/@oulmi_hocine" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-<a href="https://www.facebook.com/share/1AWX5GRx6i/?mibextid=wwXIfr" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+<a href="https://instagram.com/oulmi_hocine"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://tiktok.com/@oulmi_hocine"><i class="fa-brands fa-tiktok"></i></a>
+<a href="https://youtube.com/@oulmi_hocine"><i class="fa-brands fa-youtube"></i></a>
+<a href="https://facebook.com/share/1AWX5GRx6i/"><i class="fa-brands fa-facebook"></i></a>
+
+</div>
+
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+
+<div class="title">Experience</div>
+
+<div class="grid">
+
+<div class="card">
+<i class="fa-solid fa-trophy"></i>
+<h3>14 Years</h3>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-earth-africa"></i>
+<h3>20+ Countries</h3>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-brush"></i>
+<h3>1000+ Projects</h3>
+</div>
 
 </div>
 
 </section>
 
 <!-- WORKS -->
-
 <section id="works">
 
 <div class="title">My Works</div>
@@ -258,7 +322,6 @@ to{opacity:1; transform:translateY(0);}
 </section>
 
 <!-- BEFORE AFTER -->
-
 <section>
 
 <div class="title">Before & After</div>
@@ -280,45 +343,45 @@ to{opacity:1; transform:translateY(0);}
 
 </section>
 
-<!-- EXPERIENCE -->
+<!-- SERVICES -->
+<section id="services">
 
-<section>
+<div class="title">Services</div>
 
-<div class="title">About Me</div>
+<div class="grid">
 
-<p style="max-width:800px;margin:auto;color:#aaa;line-height:1.9;">
+<div class="card"><i class="fa-solid fa-spray-can"></i><h3>Graffiti</h3></div>
+<div class="card"><i class="fa-solid fa-brush"></i><h3>Murals</h3></div>
+<div class="card"><i class="fa-solid fa-palette"></i><h3>Custom Art</h3></div>
+<div class="card"><i class="fa-solid fa-bolt"></i><h3>Live Painting</h3></div>
 
-Professional mural artist with 14 years of experience.
-Over 1000 projects completed across more than 20 countries.
-Specialized in graffiti, murals, branding walls, and luxury art projects.
-
-</p>
+</div>
 
 </section>
 
 <!-- CONTACT -->
-
-<section>
+<section id="contact">
 
 <div class="title">Contact</div>
 
 <div class="contact">
 
-<a href="mailto:hocineoulmi1618@gmail.com">Email: hocineoulmi1618@gmail.com</a>
-
-<a href="https://wa.me/971551846694">WhatsApp Contact</a>
+<a href="mailto:hocineoulmi1618@gmail.com">Email Me</a>
+<a href="https://wa.me/971551846694">WhatsApp</a>
 
 </div>
 
 </section>
 
 <!-- FOOTER -->
-
 <footer>
-
 ©️ 2026 Oulmi Hocine | Graffiti Artist UAE
-
 </footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="whatsapp-float" href="https://wa.me/971551846694">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
