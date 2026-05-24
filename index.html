@@ -15,7 +15,7 @@ body{
     animation:fadein 1s ease-in;
 }
 
-/* FADE IN */
+/* Fade In */
 @keyframes fadein{
     from{opacity:0;}
     to{opacity:1;}
@@ -51,7 +51,32 @@ header{
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    background:#000;
+
+    background-image:url("https://drive.google.com/uc?export=view&id=10j9h0pFq0kDEWjZXdM0tdqR6dkzRO3ZL");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    position:relative;
+}
+
+/* Dark overlay */
+header::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+/* Text above image */
+header h1,
+header p,
+header a{
+    position:relative;
+    z-index:1;
 }
 
 h1{
