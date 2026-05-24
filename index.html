@@ -3,249 +3,609 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oulmi Hocine | Mural Artist</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Oulmi Hocine | Graffiti & Mural Artist UAE</title>
+
+<meta name="description" content="Oulmi Hocine is a professional graffiti and mural artist based in UAE. Custom wall murals, graffiti art, live painting, portraits and artistic projects.">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <style>
-body{
+
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
     font-family:Montserrat, Arial;
-    background:#0a0a0a;
+    background:#050505;
     color:#f2f2f2;
+    overflow-x:hidden;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#444;
+    border-radius:10px;
 }
 
 /* NAV */
+
 nav{
     position:fixed;
     top:0;
     width:100%;
-    background:rgba(0,0,0,0.85);
-    padding:15px;
-    text-align:center;
+    padding:18px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(10px);
     z-index:1000;
-    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
-nav a{
+.logo{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.nav-links a{
     color:#aaa;
-    margin:10px;
+    margin-left:20px;
     text-decoration:none;
-    font-weight:500;
+    transition:0.3s;
+    font-size:14px;
 }
 
-nav a:hover{
+.nav-links a:hover{
     color:#fff;
 }
 
 /* HERO */
+
 header{
     height:100vh;
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
+    position:relative;
+    overflow:hidden;
 
     background-image:url("https://drive.google.com/uc?export=view&id=10j9h0pFq0kDEWjZXdM0tdqR6dkzRO3ZL");
     background-size:cover;
     background-position:center;
-    position:relative;
-    overflow:hidden;
 }
 
-/* dark overlay */
 header::before{
     content:"";
     position:absolute;
-    top:0;
-    left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.65);
-}
-
-/* zoom effect */
-header:hover{
-    transform:scale(1.02);
-    transition:0.6s;
+    background:linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.92));
 }
 
 .hero{
     position:relative;
-    z-index:1;
+    z-index:2;
+    animation:fadeIn 1.2s ease;
+    padding:20px;
 }
 
-h1{
-    font-size:80px;
-    margin:0;
-    letter-spacing:2px;
+.hero h1{
+    font-size:90px;
+    font-weight:900;
+    letter-spacing:4px;
+    text-transform:uppercase;
 }
 
-h2{
-    font-size:28px;
-    color:#ccc;
+.hero h2{
+    margin-top:10px;
+    color:#bbb;
     font-weight:300;
+    font-size:28px;
 }
 
-/* BUTTON */
+.hero p{
+    max-width:700px;
+    margin:25px auto;
+    line-height:1.8;
+    color:#9d9d9d;
+}
+
 .btn{
-    margin-top:20px;
-    padding:12px 25px;
-    border:1px solid #333;
-    border-radius:30px;
-    color:#fff;
+    display:inline-block;
+    margin-top:15px;
+    padding:14px 28px;
+    border-radius:40px;
     text-decoration:none;
+    color:white;
+    border:1px solid #444;
     transition:0.3s;
+    margin-right:10px;
 }
 
 .btn:hover{
-    background:#fff;
-    color:#000;
+    background:white;
+    color:black;
+    transform:translateY(-2px);
 }
 
 /* SECTIONS */
+
 section{
-    padding:90px 20px;
-    text-align:center;
+    padding:110px 7%;
 }
 
 .title{
-    font-size:42px;
-    margin-bottom:40px;
+    text-align:center;
+    font-size:48px;
+    margin-bottom:60px;
+    font-weight:800;
+    position:relative;
 }
 
-/* GRID */
+.title::after{
+    content:"";
+    width:90px;
+    height:3px;
+    background:#fff;
+    position:absolute;
+    bottom:-15px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.gallery img{
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    border-radius:16px;
+    transition:0.5s;
+    cursor:pointer;
+    filter:grayscale(100%);
+    border:1px solid #222;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+    filter:grayscale(0%);
+    border-color:#555;
+}
+
+/* SERVICES */
+
 .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#0f0f0f;
+    border:1px solid #1d1d1d;
+    padding:35px 25px;
+    border-radius:18px;
+    transition:0.4s;
+    text-align:center;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#555;
+    background:#151515;
+}
+
+.card h3{
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+.card p{
+    color:#9c9c9c;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    margin-top:40px;
+}
+
+.stat{
+    text-align:center;
+    padding:40px 20px;
+    background:#0f0f0f;
+    border-radius:16px;
+    border:1px solid #1f1f1f;
+}
+
+.stat h4{
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+.stat p{
+    color:#888;
+}
+
+/* CLIENTS */
+
+.clients{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
     gap:20px;
 }
 
-.card{
-    background:#111;
+.client{
+    padding:18px 35px;
     border:1px solid #222;
-    padding:20px;
-    width:230px;
-    border-radius:12px;
+    border-radius:50px;
+    background:#111;
     transition:0.3s;
 }
 
-.card:hover{
-    transform:translateY(-5px);
-    border-color:#444;
+.client:hover{
+    border-color:#666;
 }
 
-/* WORK IMAGES */
-img{
-    width:260px;
-    border-radius:12px;
-    filter:grayscale(100%);
-    transition:0.4s;
+/* SOCIALS */
+
+.socials{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:40px;
 }
 
-img:hover{
-    filter:grayscale(0%);
-    transform:scale(1.08);
+.socials a{
+    text-decoration:none;
+    color:white;
+    padding:14px 22px;
+    border:1px solid #333;
+    border-radius:50px;
+    transition:0.3s;
 }
 
-/* FLOAT BUTTON */
+.socials a:hover{
+    background:white;
+    color:black;
+}
+
+/* WHATSAPP FLOAT */
+
 .whatsapp{
     position:fixed;
     bottom:20px;
     right:20px;
     background:#25D366;
     color:white;
-    padding:14px 18px;
+    padding:15px 20px;
     border-radius:50px;
     text-decoration:none;
     font-weight:bold;
-    box-shadow:0 0 15px rgba(0,0,0,0.4);
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+    z-index:999;
 }
 
 /* FOOTER */
+
 footer{
-    padding:50px 20px;
-    border-top:1px solid #222;
-    color:#777;
+    padding:60px 20px;
     text-align:center;
-    font-size:14px;
+    color:#666;
+    border-top:1px solid #181818;
+    line-height:2;
 }
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero h2{
+    font-size:22px;
+}
+
+.title{
+    font-size:34px;
+}
+
+nav{
+    flex-direction:column;
+    gap:10px;
+}
+
+.nav-links{
+    text-align:center;
+}
+
+.gallery img{
+    height:260px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <!-- NAV -->
+
 <nav>
-  <a href="#home">Home</a>
-  <a href="#works">Works</a>
-  <a href="#services">Services</a>
-  <a href="#clients">Clients</a>
-  <a href="#contact">Contact</a>
+
+<div class="logo">
+OULMI
+</div>
+
+<div class="nav-links">
+<a href="#home">Home</a>
+<a href="#works">Works</a>
+<a href="#services">Services</a>
+<a href="#clients">Clients</a>
+<a href="#contact">Contact</a>
+</div>
+
 </nav>
 
 <!-- HERO -->
+
 <header id="home">
-  <div class="hero">
-    <h1>Oulmi Hocine</h1>
-    <h2>Graffiti Artist & Muralist</h2>
-    <a class="btn" href="#works">View My Work</a>
-  </div>
+
+<div class="hero">
+
+<h1>Oulmi Hocine</h1>
+
+<h2>Graffiti Artist & Muralist</h2>
+
+<p>
+Professional mural artist based in UAE creating large-scale graffiti, wall murals, custom artworks, live painting performances and unique visual experiences.
+</p>
+
+<a class="btn" href="#works">View My Work</a>
+
+<a class="btn" href="https://wa.me/971551846694">
+WhatsApp
+</a>
+
+</div>
+
 </header>
 
 <!-- WORKS -->
-<section id="works">
-  <div class="title">My Works</div>
 
-  <div class="grid">
-    <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6">
-    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5">
-    <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7">
-  </div>
+<section id="works">
+
+<div class="title">
+My Works
+</div>
+
+<div class="gallery">
+
+<img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_1861.jpeg">
+
+<img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_1865.jpeg">
+
+<img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_2887.jpeg">
+
+<img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_2907.jpeg">
+
+<img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_2908.jpeg">
+
+<img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_2918.jpeg">
+
+<img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_2922.jpeg">
+
+<img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_2926.jpeg">
+
+<img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_2927.jpeg">
+
+<img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_2928.jpeg">
+
+</div>
+
 </section>
 
 <!-- SERVICES -->
-<section id="services">
-  <div class="title">Services</div>
 
-  <div class="grid">
-    <div class="card">Graffiti</div>
-    <div class="card">Wall Murals</div>
-    <div class="card">Portraits</div>
-    <div class="card">Arabic Calligraphy</div>
-    <div class="card">Live Painting</div>
-    <div class="card">Custom Art on Clothes & Bags</div>
-  </div>
+<section id="services">
+
+<div class="title">
+Services
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Graffiti</h3>
+<p>Creative graffiti artworks for shops, restaurants, gyms and commercial spaces.</p>
+</div>
+
+<div class="card">
+<h3>Wall Murals</h3>
+<p>Large-scale mural paintings for indoor and outdoor projects with premium artistic quality.</p>
+</div>
+
+<div class="card">
+<h3>Portraits</h3>
+<p>Custom realistic portraits and artistic compositions for private and professional projects.</p>
+</div>
+
+<div class="card">
+<h3>Arabic Calligraphy</h3>
+<p>Modern Arabic typography and calligraphy integrated into unique visual concepts.</p>
+</div>
+
+<div class="card">
+<h3>Live Painting</h3>
+<p>Live art performances for events, festivals, launches and exhibitions.</p>
+</div>
+
+<div class="card">
+<h3>Custom Art</h3>
+<p>Painting on clothes, shoes, bags and custom artistic objects.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<section>
+
+<div class="title">
+Experience
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h4>100+</h4>
+<p>Art Projects</p>
+</div>
+
+<div class="stat">
+<h4>5+</h4>
+<p>Years Experience</p>
+</div>
+
+<div class="stat">
+<h4>4</h4>
+<p>Countries</p>
+</div>
+
+<div class="stat">
+<h4>24/7</h4>
+<p>Creative Ideas</p>
+</div>
+
+</div>
+
 </section>
 
 <!-- CLIENTS -->
-<section id="clients">
-  <div class="title">Clients</div>
 
-  <div class="grid">
-    <div class="card">Porsche</div>
-    <div class="card">Red Bull</div>
-    <div class="card">Alpha X</div>
-    <div class="card">Vonto</div>
-  </div>
+<section id="clients">
+
+<div class="title">
+Clients
+</div>
+
+<div class="clients">
+
+<div class="client">Porsche</div>
+
+<div class="client">Red Bull</div>
+
+<div class="client">Alpha X</div>
+
+<div class="client">Vonto</div>
+
+</div>
+
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-  <div class="title">Contact</div>
 
-  <a class="btn" href="https://wa.me/971551846694">WhatsApp</a>
-  <a class="btn" href="mailto:hocineoulmi1618@gmail.com">Email</a>
+<section id="contact">
+
+<div class="title">
+Contact
+</div>
+
+<div class="socials">
+
+<a href="https://instagram.com/oulmi_hocine" target="_blank">
+Instagram
+</a>
+
+<a href="https://www.tiktok.com/@oulmi_hocine" target="_blank">
+TikTok
+</a>
+
+<a href="https://youtube.com/@oulmi_hocine" target="_blank">
+YouTube
+</a>
+
+<a href="https://www.facebook.com/share/1AWX5GRx6i/?mibextid=wwXIfr" target="_blank">
+Facebook
+</a>
+
+<a href="mailto:hocineoulmi1618@gmail.com">
+Email
+</a>
+
+<a href="https://wa.me/971551846694">
+WhatsApp
+</a>
+
+</div>
+
 </section>
 
-<!-- FLOAT WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/971551846694">WhatsApp</a>
+<!-- FLOAT BUTTON -->
+
+<a class="whatsapp" href="https://wa.me/971551846694">
+WhatsApp
+</a>
 
 <!-- FOOTER -->
+
 <footer>
-©️ 2025 Oulmi Hocine — Mural & Graffiti Artist in UAE
+
+©️ 2026 Oulmi Hocine | Graffiti & Mural Artist UAE
+
+<br><br>
+
+Instagram: @oulmi_hocine
+
 </footer>
 
 </body>
