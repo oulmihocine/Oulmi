@@ -3,51 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oulmi Art</title>
+<title>Oulmi Hocine | Mural Artist</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 body{
     margin:0;
-    font-family:Arial;
-    background:#0f0f0f;
+    font-family:Montserrat, Arial;
+    background:#0a0a0a;
     color:#f2f2f2;
-    text-align:center;
 }
 
 /* NAV */
 nav{
     position:fixed;
     top:0;
-    left:0;
     width:100%;
-    background:#000;
+    background:rgba(0,0,0,0.85);
     padding:15px;
+    text-align:center;
     z-index:1000;
-    border-bottom:1px solid #222;
+    backdrop-filter:blur(8px);
 }
 
 nav a{
-    color:#bbb;
+    color:#aaa;
     margin:10px;
     text-decoration:none;
+    font-weight:500;
 }
 
-/* HEADER */
+nav a:hover{
+    color:#fff;
+}
+
+/* HERO */
 header{
-    min-height:100vh;
+    height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    text-align:center;
 
     background-image:url("https://drive.google.com/uc?export=view&id=10j9h0pFq0kDEWjZXdM0tdqR6dkzRO3ZL");
     background-size:cover;
     background-position:center;
-    background-repeat:no-repeat;
-
     position:relative;
+    overflow:hidden;
 }
 
+/* dark overlay */
 header::before{
     content:"";
     position:absolute;
@@ -55,68 +62,114 @@ header::before{
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.6);
+    background:rgba(0,0,0,0.65);
 }
 
-header h1,
-header p,
-header a{
+/* zoom effect */
+header:hover{
+    transform:scale(1.02);
+    transition:0.6s;
+}
+
+.hero{
     position:relative;
     z-index:1;
 }
 
 h1{
-    font-size:70px;
+    font-size:80px;
     margin:0;
+    letter-spacing:2px;
 }
 
-p{
-    color:#aaa;
+h2{
+    font-size:28px;
+    color:#ccc;
+    font-weight:300;
 }
 
 /* BUTTON */
-a{
-    display:inline-block;
+.btn{
     margin-top:20px;
     padding:12px 25px;
-    background:#111;
-    color:#fff;
-    text-decoration:none;
     border:1px solid #333;
     border-radius:30px;
+    color:#fff;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#fff;
+    color:#000;
 }
 
 /* SECTIONS */
 section{
-    padding:70px 20px;
+    padding:90px 20px;
+    text-align:center;
 }
 
-/* IMAGES */
-img{
-    width:250px;
-    border-radius:10px;
-    filter:grayscale(100%);
+.title{
+    font-size:42px;
+    margin-bottom:40px;
+}
+
+/* GRID */
+.grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.card{
+    background:#111;
+    border:1px solid #222;
+    padding:20px;
+    width:230px;
+    border-radius:12px;
     transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#444;
+}
+
+/* WORK IMAGES */
+img{
+    width:260px;
+    border-radius:12px;
+    filter:grayscale(100%);
+    transition:0.4s;
 }
 
 img:hover{
     filter:grayscale(0%);
-    transform:scale(1.05);
+    transform:scale(1.08);
 }
 
-/* ABOUT */
-#about p{
-    max-width:750px;
-    margin:auto;
-    color:#aaa;
-    line-height:1.8;
+/* FLOAT BUTTON */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:14px 18px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 0 15px rgba(0,0,0,0.4);
 }
 
 /* FOOTER */
 footer{
-    padding:40px 20px;
+    padding:50px 20px;
     border-top:1px solid #222;
-    color:#aaa;
+    color:#777;
+    text-align:center;
     font-size:14px;
 }
 </style>
@@ -127,64 +180,72 @@ footer{
 <!-- NAV -->
 <nav>
   <a href="#home">Home</a>
-  <a href="#about">About</a>
   <a href="#works">Works</a>
+  <a href="#services">Services</a>
+  <a href="#clients">Clients</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- HOME -->
+<!-- HERO -->
 <header id="home">
-  <h1>OULMI ART</h1>
-  <p>Graffiti & Wall Mural Artist • UAE</p>
-  <a href="https://wa.me/971551846694">Contact on WhatsApp</a>
+  <div class="hero">
+    <h1>Oulmi Hocine</h1>
+    <h2>Graffiti Artist & Muralist</h2>
+    <a class="btn" href="#works">View My Work</a>
+  </div>
 </header>
-
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Me</h2>
-
-  <p>
-    <strong>Hocine Oulmi</strong> is a visual artist, muralist, and graffiti artist from Algeria, born in 1995.  
-    He graduated from the School of Fine Arts in Algiers and has over 14 years of experience in the art field, currently working between the United Arab Emirates and Algeria.
-
-    <br><br>
-
-    His work focuses on large-scale murals, street graffiti, Arabic calligraphy, live painting, ceramic design, and mixed-media artwork.
-
-    <br><br>
-
-    He has collaborated with brands such as Porsche, Red Bull, Alpha X, and Vonto, alongside numerous commercial and private clients.
-  </p>
-</section>
 
 <!-- WORKS -->
 <section id="works">
-  <h2>My Works</h2>
+  <div class="title">My Works</div>
 
-  <div style="display:flex;gap:15px;justify-content:center;flex-wrap:wrap;">
+  <div class="grid">
     <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6">
     <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5">
     <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7">
   </div>
 </section>
 
+<!-- SERVICES -->
+<section id="services">
+  <div class="title">Services</div>
+
+  <div class="grid">
+    <div class="card">Graffiti</div>
+    <div class="card">Wall Murals</div>
+    <div class="card">Portraits</div>
+    <div class="card">Arabic Calligraphy</div>
+    <div class="card">Live Painting</div>
+    <div class="card">Custom Art on Clothes & Bags</div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="title">Clients</div>
+
+  <div class="grid">
+    <div class="card">Porsche</div>
+    <div class="card">Red Bull</div>
+    <div class="card">Alpha X</div>
+    <div class="card">Vonto</div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
-  <h2>Contact</h2>
+  <div class="title">Contact</div>
 
-  <a href="https://wa.me/971551846694">WhatsApp</a>
-  <a href="mailto:hocineoulmi1618@gmail.com">Email</a>
-  <a href="https://instagram.com/oulmi_hocine">Instagram</a>
-  <a href="https://www.tiktok.com/@oulmi_hocine">TikTok</a>
-  <a href="https://youtube.com/@oulmi_hocine">YouTube</a>
-  <a href="https://www.facebook.com/share/1AWX5GRx6i/?mibextid=wwXIfr">Facebook</a>
+  <a class="btn" href="https://wa.me/971551846694">WhatsApp</a>
+  <a class="btn" href="mailto:hocineoulmi1618@gmail.com">Email</a>
 </section>
+
+<!-- FLOAT WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/971551846694">WhatsApp</a>
 
 <!-- FOOTER -->
 <footer>
-  ©️ 2025 Oulmi Hocine — Graffiti & Wall Mural Artist in UAE  
-  <br>
-  +971551846694 | hocineoulmi1618@gmail.com
+©️ 2025 Oulmi Hocine — Mural & Graffiti Artist in UAE
 </footer>
 
 </body>
