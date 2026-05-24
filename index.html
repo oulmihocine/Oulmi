@@ -12,13 +12,6 @@ body{
     background:#0f0f0f;
     color:#f2f2f2;
     text-align:center;
-    animation:fadein 1s ease-in;
-}
-
-/* Fade In */
-@keyframes fadein{
-    from{opacity:0;}
-    to{opacity:1;}
 }
 
 /* NAV */
@@ -37,11 +30,6 @@ nav a{
     color:#bbb;
     margin:10px;
     text-decoration:none;
-    transition:0.3s;
-}
-
-nav a:hover{
-    color:#fff;
 }
 
 /* HEADER */
@@ -60,7 +48,6 @@ header{
     position:relative;
 }
 
-/* Dark overlay */
 header::before{
     content:"";
     position:absolute;
@@ -71,7 +58,6 @@ header::before{
     background:rgba(0,0,0,0.6);
 }
 
-/* Text above image */
 header h1,
 header p,
 header a{
@@ -81,13 +67,23 @@ header a{
 
 h1{
     font-size:70px;
-    letter-spacing:3px;
     margin:0;
 }
 
 p{
-    font-size:18px;
     color:#aaa;
+}
+
+/* BUTTON */
+a{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#111;
+    color:#fff;
+    text-decoration:none;
+    border:1px solid #333;
+    border-radius:30px;
 }
 
 /* SECTIONS */
@@ -105,26 +101,15 @@ img{
 
 img:hover{
     filter:grayscale(0%);
-    transform:scale(1.08);
+    transform:scale(1.05);
 }
 
-/* BUTTONS */
-a{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 25px;
-    background:#111;
-    color:#fff;
-    text-decoration:none;
-    border:1px solid #333;
-    border-radius:30px;
-    transition:0.3s;
-}
-
-a:hover{
-    background:#fff;
-    color:#000;
-    transform:translateY(-3px);
+/* ABOUT */
+#about p{
+    max-width:750px;
+    margin:auto;
+    color:#aaa;
+    line-height:1.8;
 }
 
 /* FOOTER */
@@ -132,7 +117,6 @@ footer{
     padding:40px 20px;
     border-top:1px solid #222;
     color:#aaa;
-    margin-top:40px;
     font-size:14px;
 }
 </style>
@@ -143,62 +127,64 @@ footer{
 <!-- NAV -->
 <nav>
   <a href="#home">Home</a>
+  <a href="#about">About</a>
   <a href="#works">Works</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <!-- HOME -->
 <header id="home">
-
   <h1>OULMI ART</h1>
   <p>Graffiti & Wall Mural Artist • UAE</p>
-
   <a href="https://wa.me/971551846694">Contact on WhatsApp</a>
-
 </header>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+
+  <p>
+    <strong>Hocine Oulmi</strong> is a visual artist, muralist, and graffiti artist from Algeria, born in 1995.  
+    He graduated from the School of Fine Arts in Algiers and has over 14 years of experience in the art field, currently working between the United Arab Emirates and Algeria.
+
+    <br><br>
+
+    His work focuses on large-scale murals, street graffiti, Arabic calligraphy, live painting, ceramic design, and mixed-media artwork.
+
+    <br><br>
+
+    He has collaborated with brands such as Porsche, Red Bull, Alpha X, and Vonto, alongside numerous commercial and private clients.
+  </p>
+</section>
 
 <!-- WORKS -->
 <section id="works">
-
   <h2>My Works</h2>
 
   <div style="display:flex;gap:15px;justify-content:center;flex-wrap:wrap;">
-
     <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6">
     <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5">
     <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7">
-
   </div>
-
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
+  <h2>Contact</h2>
 
-  <h2>Contact Me</h2>
-
-  <p style="color:#aaa;">Let’s connect</p>
-
-  <div>
-
-    <a href="https://wa.me/971551846694">WhatsApp</a>
-    <a href="mailto:hocineoulmi1618@gmail.com">Email</a>
-    <a href="https://instagram.com/oulmi_hocine">Instagram</a>
-    <a href="https://www.tiktok.com/@oulmi_hocine">TikTok</a>
-    <a href="https://youtube.com/@oulmi_hocine">YouTube</a>
-    <a href="https://www.facebook.com/share/1AWX5GRx6i/?mibextid=wwXIfr">Facebook</a>
-
-  </div>
-
+  <a href="https://wa.me/971551846694">WhatsApp</a>
+  <a href="mailto:hocineoulmi1618@gmail.com">Email</a>
+  <a href="https://instagram.com/oulmi_hocine">Instagram</a>
+  <a href="https://www.tiktok.com/@oulmi_hocine">TikTok</a>
+  <a href="https://youtube.com/@oulmi_hocine">YouTube</a>
+  <a href="https://www.facebook.com/share/1AWX5GRx6i/?mibextid=wwXIfr">Facebook</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
   ©️ 2025 Oulmi Hocine — Graffiti & Wall Mural Artist in UAE  
-  <br><br>
-  Based in Dubai | Number: +971551846694  
   <br>
-  Email: hocineoulmi1618@gmail.com
+  +971551846694 | hocineoulmi1618@gmail.com
 </footer>
 
 </body>
