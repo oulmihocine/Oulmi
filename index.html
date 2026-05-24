@@ -79,17 +79,34 @@ background:rgba(0,0,0,0.70);
 .hero{
 position:relative;
 z-index:2;
+animation:heroMove 6s ease-in-out infinite;
 }
 
 .hero h1{
 font-size:80px;
 font-weight:900;
+letter-spacing:3px;
+animation:textGlow 4s ease-in-out infinite;
+margin:0;
 }
 
 .hero h2{
 font-size:25px;
 color:#ccc;
 margin-top:10px;
+font-weight:300;
+}
+
+@keyframes heroMove{
+0%{ transform:translateY(0px); }
+50%{ transform:translateY(-10px); }
+100%{ transform:translateY(0px); }
+}
+
+@keyframes textGlow{
+0%{ text-shadow:0 0 0px #fff; }
+50%{ text-shadow:0 0 20px rgba(255,255,255,0.3); }
+100%{ text-shadow:0 0 0px #fff; }
 }
 
 .hero p{
