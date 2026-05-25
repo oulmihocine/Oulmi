@@ -22,12 +22,31 @@ scroll-behavior:smooth;
 }
 
 body{
+
 font-family:Montserrat;
 background:#050505;
 color:white;
 overflow-x:hidden;
 }
+.logo{
+position:fixed;
+top:20px;
+left:20px;
 
+width:140px;
+height:auto;
+
+z-index:999;
+
+transition:0.3s;
+
+filter:brightness(100%);
+}
+
+.logo:hover{
+transform:scale(1.05);
+filter:brightness(110%);
+}
 /* NAV */
 nav{
 position:fixed;
@@ -256,7 +275,7 @@ z-index:1000;
 </head>
 
 <body>
-
+<img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_5512.jpeg" class="logo">
 <!-- NAV -->
 <nav>
 <a href="#home">Home</a>
