@@ -10,7 +10,7 @@
 <meta name="keywords" content="graffiti artist dubai, mural artist uae, wall painting dubai, custom art dubai, street art UAE, Oulmi Hocine, live painting dubai, luxury custom leather">
 <meta name="author" content="Oulmi Hocine">
 
-<!-- Open Graph / Facebook (لتحسين شكل الرابط عند مشاركته على السوشيال ميديا) -->
+<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Oulmi Hocine | Graffiti & Mural Artist in Dubai">
 <meta property="og:description" content="Professional Graffiti and Wall Mural Artist in UAE. 14+ years of experience.">
@@ -19,11 +19,9 @@
 <title>Oulmi Hocine | Graffiti Artist</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -32,24 +30,20 @@ scroll-behavior:smooth;
 }
 
 body{
-
-font-family:Montserrat;
+font-family:Montserrat, sans-serif;
 background:#050505;
 color:white;
 overflow-x:hidden;
 }
+
 .logo{
 position:fixed;
 top:20px;
 left:20px;
-
 width:140px;
 height:auto;
-
 z-index:999;
-
 transition:0.3s;
-
 filter:brightness(100%);
 }
 
@@ -57,6 +51,7 @@ filter:brightness(100%);
 transform:scale(1.05);
 filter:brightness(110%);
 }
+
 /* NAV */
 nav{
 position:fixed;
@@ -75,6 +70,7 @@ nav a{
 color:#aaa;
 text-decoration:none;
 font-size:14px;
+transition:0.3s;
 }
 
 nav a:hover{
@@ -89,7 +85,6 @@ justify-content:center;
 align-items:center;
 text-align:center;
 position:relative;
-
 background-image:url("https://github.com/oulmihocine/Oulmi/blob/main/DSC08159-min.JPG?raw=true");
 background-size:cover;
 background-position:center;
@@ -168,6 +163,7 @@ text-align:center;
 .title{
 font-size:40px;
 margin-bottom:40px;
+font-weight:700;
 }
 
 /* GRID */
@@ -206,18 +202,19 @@ margin-top:20px;
 .socials a{
 font-size:26px;
 color:white;
+transition:0.3s;
 }
 
-.fa-instagram{color:white;}
-.fa-tiktok{color:white;}
-.fa-youtube{color:white;}
-.fa-facebook{color:white;}
+.socials a:hover{
+color:#aaa;
+}
 
 /* GALLERY */
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:15px;
+margin-top:20px;
 }
 
 .gallery img{
@@ -248,21 +245,25 @@ border-radius:15px;
 scroll-snap-align:center;
 }
 
-/* CONTACT */
-.contact a{
-display:block;
-margin:10px;
-color:#aaa;
-text-decoration:none;
-}
-
 footer{
 padding:50px;
 border-top:1px solid #222;
 color:#777;
+text-align:center;
 }
 
-/* WHATSAPP */
+.footer-socials a {
+color:#777;
+margin:0 10px;
+font-size:20px;
+transition:0.3s;
+}
+
+.footer-socials a:hover {
+color:white;
+}
+
+/* WHATSAPP & PHONE FLOAT */
 .whatsapp-float{
 position:fixed;
 bottom:20px;
@@ -279,6 +280,7 @@ font-size:30px;
 text-decoration:none;
 z-index:1000;
 }
+
 .icon{
 position:fixed;
 top:20px;
@@ -293,6 +295,7 @@ align-items:center;
 color:white;
 text-decoration:none;
 transition:0.3s;
+z-index:1000;
 }
 
 .icon:hover{
@@ -305,10 +308,13 @@ transform:scale(1.1);
 </head>
 
 <body>
+
 <img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_5512.jpeg" class="logo">
+
 <a href="contact.html" class="icon">
 <i class="fas fa-phone"></i>
 </a>
+
 <!-- NAV -->
 <nav>
 <a href="#home">Home</a>
@@ -316,75 +322,53 @@ transform:scale(1.1);
 <a href="#works">Works</a>
 <a href="#services">Services</a>
 <a href="contact.html">Contact</a>
-
 <a href="project.html">Project</a>
 </nav>
 
 <!-- HERO -->
 <header id="home">
-
 <div class="hero">
-
 <h1>Oulmi Hocine</h1>
 <h2>Graffiti Artist & Muralist</h2>
-
 <p>14 Years Experience • 1000+ Projects • 20+ Countries</p>
-
 <a class="btn" href="#works">View Works</a>
-
 </div>
-
 </header>
 
 <!-- SOCIAL -->
 <section>
-
 <div class="title">Social Media</div>
-
 <div class="socials">
-
-<a href="https://instagram.com/oulmi_hocine"><i class="fa-brands fa-instagram"></i></a>
-<a href="https://tiktok.com/@oulmi_hocine"><i class="fa-brands fa-tiktok"></i></a>
-<a href="https://youtube.com/@oulmi_hocine"><i class="fa-brands fa-youtube"></i></a>
-<a href="https://facebook.com/share/1AWX5GRx6i/"><i class="fa-brands fa-facebook"></i></a>
-
+<a href="https://instagram.com/oulmi_hocine" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://tiktok.com/@oulmi_hocine" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+<a href="https://youtube.com/@oulmi_hocine" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+<a href="https://facebook.com/share/1AWX5GRx6i/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
 </div>
-
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
-
 <div class="title">Experience</div>
-
 <div class="grid">
-
 <div class="card">
 <i class="fa-solid fa-trophy"></i>
 <h3>14 Years</h3>
 </div>
-
 <div class="card">
 <i class="fa-solid fa-earth-africa"></i>
 <h3>20+ Countries</h3>
 </div>
-
 <div class="card">
 <i class="fa-solid fa-brush"></i>
 <h3>1000+ Projects</h3>
 </div>
-
 </div>
-
 </section>
 
 <!-- WORKS -->
 <section id="works">
-
 <div class="title">My Works</div>
-
 <div class="gallery">
-
 <img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_1861.jpeg">
 <img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_1865.jpeg">
 <img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_2887.jpeg">
@@ -400,18 +384,13 @@ transform:scale(1.1);
 <img src="https://github.com/oulmihocine/Oulmi/blob/main/IMG_5439.jpeg?raw=true">
 <img src="https://github.com/oulmihocine/Oulmi/blob/main/IMG_5172.jpeg?raw=true">
 <img src="https://github.com/oulmihocine/Oulmi/blob/main/IMG_5221.jpeg?raw=true">  
-  
 </div>
-
 </section>
 
 <!-- BEFORE AFTER -->
 <section>
-
 <div class="title">Before & After</div>
-
 <div class="ba-slider">
-
 <img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_5221.jpeg">
 <img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_4266.jpeg">
 <img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_4763.jpeg">
@@ -422,95 +401,69 @@ transform:scale(1.1);
 <img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_4719.jpeg">
 <img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_5439.jpeg">
 <img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_4720.jpeg">
-
 </div>
-
-</div>
-
 </section>
 
-<!-- CUSTOM ART (مرة واحدة فقط) -->
+<!-- CUSTOM ART -->
 <section id="customArt">
-
   <div class="title">Custom Art</div>
-
   <p style="max-width:700px;margin:auto;color:#aaa;">
     I customize luxury bags, clothes, sneakers and leather goods.
   </p>
-
   <div class="gallery">
-
     <img src="https://github.com/oulmihocine/Oulmi/blob/main/8a1b611c-54ab-4f5c-a773-04a9ed1e970d.jpeg?raw=true">
     <img src="https://github.com/oulmihocine/Oulmi/blob/main/3c562642-34a1-41fa-81ab-24339cd3acac.jpeg?raw=true">
     <img src="https://github.com/oulmihocine/Oulmi/blob/main/3c562642-34a1-41fa-81ab-24339cd3acac.jpeg?raw=true">
-
   </div>
-
 </section>
 
-<!-- SERVICES (مرة واحدة فقط) -->
+<!-- SERVICES -->
 <section id="services">
-
   <div class="title">Services</div>
-
   <div class="grid">
-
     <div class="card">
       <i class="fa-solid fa-spray-can"></i>
       <h3>Graffiti</h3>
     </div>
-
     <div class="card">
       <i class="fa-solid fa-brush"></i>
       <h3>Murals</h3>
     </div>
-
     <a href="#customArt" class="card" style="display:block;text-decoration:none;color:white;">
       <i class="fa-solid fa-palette"></i>
       <h3>Custom Art</h3>
     </a>
-
     <div class="card">
       <i class="fa-solid fa-bolt"></i>
       <h3>Live Painting</h3>
     </div>
-
     <div class="card">
       <i class="fa-solid fa-fill-drip"></i>
       <h3>Oil & Acrylic Painting</h3>
     </div>
-
     <div class="card">
       <i class="fa-solid fa-shoe-prints"></i>
       <h3>Painting on Leather</h3>
     </div>
-
   </div>
-
 </section>
 
 <!-- FOOTER -->
 <footer>
-
 <p>©️ 2026 Oulmi Hocine — Graffiti & Wall Mural Artist in UAE</p>
-
-<p>Based in Dubai | Number: +971551846694</p>
-
+<p style="margin:5px 0;">Based in Dubai | Number: +971551846694</p>
 <p>Email: hocineoulmi1618@gmail.com</p>
 
 <div class="footer-socials">
-
 <a href="https://instagram.com/oulmi_hocine" target="_blank"><i class="fa-brands fa-instagram"></i></a>
 <a href="https://www.tiktok.com/@oulmi_hocine" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
 <a href="https://youtube.com/@oulmi_hocine" target="_blank"><i class="fa-brands fa-youtube"></i></a>
 <a href="https://www.facebook.com/share/1AWX5GRx6i/?mibextid=wwXIfr" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-
 </div>
-
 </footer>
 
 <!-- WHATSAPP FLOAT -->
-<a class="whatsapp-float" href="https://wa.me/971551846694">
+<a class="whatsapp-float" href="https://wa.me/971551846694" target="_blank">
 <i class="fa-brands fa-whatsapp"></i>
 </a>
 
