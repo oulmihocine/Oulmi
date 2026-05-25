@@ -1,3 +1,10 @@
+تفضل الكود الكامل لصفحة المشاريع بعد تعديله بدقة.
+لقد قمت بدمج الروابط التي أرسلتها في مكانين لكل مشروع:
+ 1. **كخلفية للكرت (style="background-image: ..."):** لتظهر الصورة في خلفية الكرت بشكل سنمائي جميل، مع الحفاظ على التظليل الأسود المتدرج حتى تظل النصوص بيضاء وواضحة جداً فوقها.
+ 2. **في خاصية الفتح المنبثق (data-image="..."):** لكي تفتح نفس الصورة بحجمها الكامل وبشكل مكبر وسلس عند الضغط على الكرت.
+*(ملاحظة: بالنسبة للمشاريع المتبقية التي لم ترسل صورها بعد مثل Red Bull و Zelo، تركت لها صوراً تعبيرية مؤقتة يمكنك تغيير روابطها لاحقاً بنفس الطريقة).*
+إليك الكود الكامل، انسخه بالكامل واستبدل ملفك به:
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,11 +26,10 @@ background:#0f0f0f;
 font-family:Arial,sans-serif;
 color:white;
 overflow-x:hidden;
-/* إضافة مسافة علوية حتى لا يختفي المحتوى تحت شريط التنقل الثابت */
 padding-top: 80px; 
 }
 
-/* --- تنسيق شريط التنقل العلوي الجديد (Navbar) --- */
+/* --- شريط التنقل العلوي (Navbar) --- */
 .navbar {
 position: fixed;
 top: 0;
@@ -31,13 +37,13 @@ left: 0;
 width: 100%;
 height: 80px;
 background: rgba(15, 15, 15, 0.95);
-backdrop-filter: blur(10px); /* تأثير ضبابي خلف القائمة */
+backdrop-filter: blur(10px);
 display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 0 5%;
 border-bottom: 1px solid #2a2a2a;
-z-index: 2000; /* لضمان ظهوره فوق كل العناصر */
+z-index: 2000;
 }
 
 .nav-logo {
@@ -62,15 +68,14 @@ letter-spacing: 1px;
 transition: 0.3s;
 }
 
-/* تأثير عند تمرير الماوس فوق الروابط أو عندما يكون الرابط نشطاً */
 .nav-links a:hover, 
 .nav-links a.active {
 color: white;
 }
 
-/* --- بقية التنسيقات الخاصة بك كما هي --- */
+/* --- قسم الهيدر --- */
 .header{
-padding:60px 20px 60px; /* تم تعديله ليتناسب هندسياً مع وجود الـ Navbar */
+padding:60px 20px 60px;
 text-align:center;
 }
 
@@ -85,6 +90,7 @@ color:#888;
 font-size:18px;
 }
 
+/* --- شبكة المشاريع --- */
 .projects{
 width:90%;
 max-width:1400px;
@@ -109,8 +115,14 @@ display:flex;
 flex-direction:column;
 justify-content:flex-end;
 padding:30px;
+
+/* إعدادات الخلفية لتكون متناسقة ومغطاة بالكامل */
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
 }
 
+/* طبقة التظليل المتدرج لضمان وضوح الكلمات فوق صور الخلفية */
 .card::before{
 content:"";
 position:absolute;
@@ -120,8 +132,9 @@ width:100%;
 height:100%;
 background:linear-gradient(
 to top,
-rgba(0,0,0,0.9),
-rgba(0,0,0,0.2)
+rgba(0,0,0,0.95) 0%,
+rgba(0,0,0,0.4) 60%,
+rgba(0,0,0,0.2) 100__
 );
 z-index:1;
 }
@@ -144,12 +157,14 @@ transform:translateY(-8px);
 .card h3{
 font-size:30px;
 margin-bottom:12px;
+text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 
 .info{
 color:#b5b5b5;
 font-size:15px;
 line-height:1.8;
+text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .view{
@@ -166,16 +181,16 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* --- تنسيقات النافذة المنبثقة للصور (Modal CSS) --- */
+/* --- النافذة المنبثقة للصورة الكاملة (Modal) --- */
 .modal {
 display: none;
 position: fixed;
-z-index: 3000; /* أعلى من الـ navbar */
+z-index: 3000;
 left: 0;
 top: 0;
 width: 100%;
 height: 100%;
-background-color: rgba(0, 0, 0, 0.9);
+background-color: rgba(0, 0, 0, 0.95);
 justify-content: center;
 align-items: center;
 opacity: 0;
@@ -188,10 +203,10 @@ opacity: 1;
 }
 
 .modal-content {
-max-width: 80%;
-max-height: 80%;
+max-width: 85%;
+max-height: 85%;
 border-radius: 15px;
-box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
 transform: scale(0.7);
 transition: transform 0.3s ease;
 object-fit: contain;
@@ -221,6 +236,7 @@ color: #bbb;
 
 <body>
 
+<!-- شريط التنقل العلوي -->
 <nav class="navbar">
 <a href="index.html" class="nav-logo">HOCINE.O</a>
 <ul class="nav-links">
@@ -237,7 +253,8 @@ color: #bbb;
 
 <div class="projects">
 
-<div class="card" data-image="https://picsum.photos/800/600?random=1">
+<!-- Porsche Event -->
+<div class="card" style="background-image: url('https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_1861.jpeg');" data-image="https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_1861.jpeg">
 <div class="card-content">
 <h3>Porsche Event</h3>
 <div class="info">
@@ -248,7 +265,8 @@ Dubai, UAE<br>
 </div>
 </div>
 
-<div class="card" data-image="https://picsum.photos/800/600?random=2">
+<!-- Red Bull Event (تعبيرية مؤقتة) -->
+<div class="card" style="background-image: url('https://picsum.photos/800/600?random=2');" data-image="https://picsum.photos/800/600?random=2">
 <div class="card-content">
 <h3>Red Bull Event</h3>
 <div class="info">
@@ -259,7 +277,8 @@ Dubai, UAE<br>
 </div>
 </div>
 
-<div class="card" data-image="https://picsum.photos/800/600?random=3">
+<!-- Calligraffiti Alpha X Company -->
+<div class="card" style="background-image: url('https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_4973.jpeg');" data-image="https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_4973.jpeg">
 <div class="card-content">
 <h3>Calligraffiti Alpha X Company</h3>
 <div class="info">
@@ -270,7 +289,8 @@ Dubai, UAE<br>
 </div>
 </div>
 
-<div class="card" data-image="https://picsum.photos/800/600?random=4">
+<!-- Crusty’s Restaurant -->
+<div class="card" style="background-image: url('https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_2931.jpeg');" data-image="https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_2931.jpeg">
 <div class="card-content">
 <h3>Crusty’s Restaurant</h3>
 <div class="info">
@@ -281,7 +301,8 @@ Dubai, UAE<br>
 </div>
 </div>
 
-<div class="card" data-image="https://picsum.photos/800/600?random=5">
+<!-- Cotton Candy 2D Restaurant -->
+<div class="card" style="background-image: url('https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_0101.jpeg');" data-image="https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_0101.jpeg">
 <div class="card-content">
 <h3>Cotton Candy 2D Restaurant</h3>
 <div class="info">
@@ -292,7 +313,8 @@ Dubai, UAE<br>
 </div>
 </div>
 
-<div class="card" data-image="https://picsum.photos/800/600?random=6">
+<!-- Vonto Brand -->
+<div class="card" style="background-image: url('https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/12e14892-6b2d-41cb-abba-b739ff82b5e5.jpeg');" data-image="https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/12e14892-6b2d-41cb-abba-b739ff82b5e5.jpeg">
 <div class="card-content">
 <h3>Vonto Brand</h3>
 <div class="info">
@@ -303,7 +325,8 @@ Dubai, UAE<br>
 </div>
 </div>
 
-<div class="card" data-image="https://picsum.photos/800/600?random=7">
+<!-- Bankd Company -->
+<div class="card" style="background-image: url('https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_5172.jpeg');" data-image="https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_5172.jpeg">
 <div class="card-content">
 <h3>Bankd Company</h3>
 <div class="info">
@@ -314,7 +337,8 @@ Dubai, UAE<br>
 </div>
 </div>
 
-<div class="card" data-image="https://picsum.photos/800/600?random=8">
+<!-- Zelo Company (تعبيرية مؤقتة) -->
+<div class="card" style="background-image: url('https://picsum.photos/800/600?random=8');" data-image="https://picsum.photos/800/600?random=8">
 <div class="card-content">
 <h3>Zelo Company</h3>
 <div class="info">
@@ -325,7 +349,8 @@ Dubai, UAE<br>
 </div>
 </div>
 
-<div class="card" data-image="https://picsum.photos/800/600?random=9">
+<!-- Al Asbar Car Factory -->
+<div class="card" style="background-image: url('https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_2580.jpeg');" data-image="https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_2580.jpeg">
 <div class="card-content">
 <h3>Al Asbar Car Factory</h3>
 <div class="info">
@@ -336,7 +361,8 @@ Dubai, UAE<br>
 </div>
 </div>
 
-<div class="card" data-image="https://picsum.photos/800/600?random=10">
+<!-- Exclusive Car Company -->
+<div class="card" style="background-image: url('https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_6229.jpeg');" data-image="https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_6229.jpeg">
 <div class="card-content">
 <h3>Exclusive Car Company</h3>
 <div class="info">
@@ -349,6 +375,7 @@ Dubai, UAE<br>
 
 </div>
 
+<!-- نافذة عرض الصور كاملة عند الضغط -->
 <div class="modal" id="imageModal">
 <span class="close-modal" id="closeModal">&times;</span>
 <img class="modal-content" id="modalImg" src="" alt="Project Image">
@@ -366,14 +393,14 @@ const imageSrc = card.getAttribute('data-image');
 if(imageSrc) {
 modalImg.src = imageSrc;
 modal.classList.add('active');
-document.body.style.overflow = 'hidden'; // منع سكرول الصفحة الخلفية أثناء عرض الصورة
+document.body.style.overflow = 'hidden'; 
 }
 });
 });
 
 closeModal.addEventListener('click', () => {
 modal.classList.remove('active');
-document.body.style.overflow = 'auto'; // إرجاع السكرول لوضعه الطبيعي
+document.body.style.overflow = 'auto'; 
 });
 
 modal.addEventListener('click', (e) => {
@@ -386,3 +413,5 @@ document.body.style.overflow = 'auto';
 
 </body>
 </html>
+
+```
