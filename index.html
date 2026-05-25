@@ -269,13 +269,36 @@ font-size:30px;
 text-decoration:none;
 z-index:1000;
 }
+.icon{
+position:fixed;
+top:20px;
+right:20px;
+width:45px;
+height:45px;
+border:1px solid white;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
 
+.icon:hover{
+background:white;
+color:black;
+transform:scale(1.1);
+}
 </style>
 
 </head>
 
 <body>
 <img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/refs/heads/main/IMG_5512.jpeg" class="logo">
+<a href="contact.html" class="icon">
+<i class="fas fa-phone"></i>
+</a>
 <!-- NAV -->
 <nav>
 <a href="#home">Home</a>
