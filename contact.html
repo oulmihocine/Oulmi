@@ -6,7 +6,9 @@
 
 <title>Contact | Oulmi Hocine</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- إضافة الخطوط والأيقونات المتوافقة مع موقعك الرئيسي -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
@@ -14,44 +16,105 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+scroll-behavior:smooth;
 }
 
 body{
-background:#fff;
-color:#111;
+font-family:Montserrat, sans-serif;
+background:#050505; /* تم تحويل الخلفية للأسود الفاخر */
+color:white;
 display:flex;
+flex-direction: column;
 justify-content:center;
 align-items:center;
 min-height:100vh;
+overflow-x:hidden;
+}
+
+/* الشعار العلوي المتوافق مع index.html */
+.logo{
+position:fixed;
+top:20px;
+left:20px;
+width:140px;
+height:auto;
+z-index:999;
+transition:0.3s;
+}
+
+.logo:hover{
+transform:scale(1.05);
+}
+
+/* القائمة العلوية للترابط بين الصفحات */
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:20px;
+padding:15px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+nav a{
+color:#aaa;
+text-decoration:none;
+font-size:14px;
+transition: 0.3s;
+}
+
+nav a:hover{
+color:white;
 }
 
 .container{
 width:90%;
 max-width:700px;
 text-align:center;
+margin-top: 100px; /* لترك مساحة تحت الـ Nav */
+padding: 20px;
 }
 
 h1{
 font-size:50px;
 margin-bottom:10px;
+font-weight: 900;
+letter-spacing: 2px;
 }
 
 p{
-color:#555;
+color:#aaa;
 margin-bottom:40px;
+font-weight: 300;
 }
 
 .info{
-margin-bottom:30px;
-font-size:16px;
-line-height:2;
+margin-bottom:40px;
+font-size:18px;
+line-height: 2.2;
+background: #111;
+padding: 30px;
+border-radius: 15px;
+border: 1px solid #222;
+text-align: left; /* ترتيب البيانات بشكل منظم */
+max-width: 500px;
+margin-left: auto;
+margin-right: auto;
 }
 
 .info a{
-color:#111;
+color:#fff;
 text-decoration:none;
 font-weight:bold;
+transition: 0.3s;
+}
+
+.info a:hover{
+color: #aaa;
 }
 
 .icons{
@@ -63,68 +126,130 @@ flex-wrap:wrap;
 }
 
 .icons a{
-width:50px;
-height:50px;
-border:1px solid #111;
+width:55px;
+height:55px;
+border:1px solid #444;
 display:flex;
 justify-content:center;
 align-items:center;
 border-radius:50%;
-color:#111;
-font-size:20px;
+color:#fff;
+font-size:22px;
 transition:0.3s;
 text-decoration:none;
 }
 
 .icons a:hover{
-background:#111;
-color:#fff;
+background:#fff;
+color:#111;
 transform:scale(1.1);
+border-color: #fff;
 }
 
 .footer{
-margin-top:40px;
+margin-top:60px;
 font-size:14px;
-color:#666;
+color:#777;
+padding-bottom: 20px;
+}
+
+/* أيقونة الهاتف العلوية جهة اليمين */
+.icon{
+position:fixed;
+top:20px;
+right:20px;
+width:45px;
+height:45px;
+border:1px solid white;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+text-decoration:none;
+transition:0.3s;
+z-index: 1001;
+}
+
+.icon:hover{
+background:white;
+color:black;
+transform:scale(1.1);
+}
+
+/* زر الواتساب العائم الأسفل */
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+font-size:30px;
+text-decoration:none;
+z-index:1000;
 }
 
 </style>
-
 </head>
 
 <body>
+
+<!-- الشعار وأيقونة الهاتف ليتطابق تماماً مع الموقع الرئيسي -->
+<a href="index.html">
+    <img src="https://raw.githubusercontent.com/oulmihocine/Oulmi/main/IMG_5512.jpeg" class="logo">
+</a>
+
+<a href="tel:+971551846694" class="icon">
+    <i class="fas fa-phone"></i>
+</a>
+
+<!-- شريط التنقل مبرمج ليعيدك لأقسام الصفحة الرئيسية بدقة -->
+<nav>
+<a href="index.html#home">Home</a>
+<a href="index.html#experience">Experience</a>
+<a href="index.html#works">Works</a>
+<a href="index.html#services">Services</a>
+<a href="contact.html" style="color: white; font-weight: bold;">Contact</a>
+<a href="project.html">Project</a>
+</nav>
 
 <div class="container">
 
 <h1>Contact</h1>
 <p>Let’s work together</p>
 
+<!-- الحفاظ الكامل على معلوماتك الشخصية مع تحسين التصميم -->
 <div class="info">
-
-📞 Phone: <a href="tel:+971551846694">+971 55 184 6694</a><br>
-💬 WhatsApp: <a href="https://wa.me/971551846694" target="_blank">Chat on WhatsApp</a><br>
-📧 Email: <a href="mailto:Hocineoulmi1618@gmail.com">Hocineoulmi1618@gmail.com</a><br>
-📍 Location: The Exclusive Tower, Dubai, UAE
-
+    📞 <b>Phone:</b> <a href="tel:+971551846694">+971 55 184 6694</a><br>
+    💬 <b>WhatsApp:</b> <a href="https://wa.me/971551846694" target="_blank">Chat on WhatsApp</a><br>
+    📧 <b>Email:</b> <a href="mailto:Hocineoulmi1618@gmail.com">Hocineoulmi1618@gmail.com</a><br>
+    📍 <b>Location:</b> The Exclusive Tower, Dubai, UAE
 </div>
 
+<!-- أيقونات السوشيال ميديا الخاصة بك -->
 <div class="icons">
-
-<a href="https://instagram.com/oulmi_hocine" target="_blank"><i class="fab fa-instagram"></i></a>
-
-<a href="https://www.tiktok.com/@oulmi_hocine" target="_blank"><i class="fab fa-tiktok"></i></a>
-
-<a href="https://youtube.com/@oulmi_hocine" target="_blank"><i class="fab fa-youtube"></i></a>
-
-<a href="https://www.facebook.com/share/1AWX5GRx6i/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
-
+    <a href="https://instagram.com/oulmi_hocine" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@oulmi_hocine" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://youtube.com/@oulmi_hocine" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.facebook.com/share/1AWX5GRx6i/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
 </div>
 
 <div class="footer">
-Dubai, UAE • Oulmi Hocine ©️ 2026
+    Dubai, UAE • Oulmi Hocine ©️ 2026
 </div>
 
 </div>
+
+<!-- زر الواتساب العائم السريع -->
+<a class="whatsapp-float" href="https://wa.me/971551846694" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
